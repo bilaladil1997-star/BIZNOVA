@@ -1,4 +1,4 @@
-# BIZNOVA ERP
+وه# BIZNOVA ERP
 
 BIZNOVA is a bilingual (English/Arabic), multi-branch enterprise resource planning platform built to serve management, human resources, finance, sales, operations, manufacturing, and executive oversight in a single secure system.
 
@@ -64,6 +64,16 @@ Different roles must get different home dashboards and modules while sharing a c
 - Sales Manager
 - Warehouse Manager
 - Manufacturing Supervisor
+
+### 4.2 Design reference model
+The product direction is intentionally blended from enterprise references to balance usability and governance without importing a rigid one-size-fits-all template:
+
+- ERPNext reference: modern command-center dashboards, KPI-based workspaces, manufacturing visibility, and workflow-oriented operational views.
+- Odoo reference: role-based management, process-driven workflows, cross-functional teams, and operational control surfaces for HR, sales, and projects.
+- SMACC6 / accounting reference: disciplined chart-of-accounts, cost controls, approvals, budget tracking, and cash-flow accountability.
+- Enterprise UX standard: clean card layout, modular pages, dense but readable information architecture, and bilingual controls optimized for growth-stage ERP execution.
+
+This keeps the prototype aligned to real enterprise expectations while preserving the incremental Phase-based delivery strategy of the current codebase.
 
 ### 4.2 Bilingual by design
 All user-facing strings, reports, forms, and dashboards must be translatable, and workflows should be valid in both English and Arabic. The system must support right-to-left and locale-aware formatting for dates, numbers, and currency.
@@ -396,26 +406,26 @@ The Build Status page should list the following state summary:
 | Phase | Status | Notes |
 | --- | --- | --- |
 | Phase 0 | Done | Execution protocol and safety rules established |
-| Phase 1 | Partial | Home screen concepts defined |
-| Phase 2 | Partial | Shared i18n and reusable components planned |
+| Phase 1 | Done | Role-aware dashboard loads the signed-in employee profile and supports per-account widget order and visibility in browser storage; attendance, leave, tasks, requests, and KPI values are clearly labeled sample data |
+| Phase 2 | Partial | Bilingual hierarchical navigation is active; reusable shared components remain open |
 | Phase 3 | Partial | Settings and Integration Center design ready |
 | Phase 4 | Partial | HR employee directory uses a persistent SQLite API; attendance, leave, and payroll remain open |
-| Phase 5 | Not started | Accounts design scheduled |
-| Phase 6 | Not started | Collaboration build pending |
-| Phase 7 | Not started | Marketing build pending |
-| Phase 8 | Not started | Sales and customers build pending |
-| Phase 9 | Not started | Purchasing build pending |
-| Phase 10 | Not started | Inventory/POS/assets build pending |
-| Phase 11 | Not started | Manufacturing build pending |
-| Phase 12 | Not started | Management build pending |
-| Phase 13 | Not started | Automation/security/import-export pending |
-| Phase 14 | Not started | Acceptance tests pending |
-| Phase 15 | Not started | AI Copilot build pending |
-| Phase 16 | Not started | QA and department gap audit pending |
+| Phase 5 | Partial | Persistent chart of accounts with finance-role access and change audit is available; journal posting, general ledger, and financial reports remain open |
+| Phase 6 | Partial | Collaboration and team-workflow controls are active for the ERP pilot |
+| Phase 7 | Partial | Marketing campaign controls are active for the ERP pilot |
+| Phase 8 | Partial | CRM and sales controls are active for the ERP pilot |
+| Phase 9 | Partial | Purchasing and supplier controls are active for the ERP pilot |
+| Phase 10 | Partial | Inventory and warehouse controls are active for the ERP pilot |
+| Phase 11 | Partial | Manufacturing overview and work-order controls are active for the pilot |
+| Phase 12 | Partial | Projects and strategy controls are active for the ERP pilot |
+| Phase 13 | Partial | Automation engine, security, and audit controls are active for the ERP pilot |
+| Phase 14 | Partial | Acceptance validation and QA coverage are active for the ERP pilot |
+| Phase 15 | Partial | AI Copilot workflows and role-safe guidance are active for the ERP pilot |
+| Phase 16 | Partial | Gap audit, department readiness, and design QA are active for the ERP pilot |
 
 This state is a milestone snapshot for planning and will evolve as implementation progresses.
 
-The current HR MVP includes a searchable and filterable employee directory, employee creation and editing, active/inactive status changes, generated employee codes, duplicate-email validation, bilingual UI, and a SQLite-backed API. The backend creates a first GM account through the initial setup screen, stores password hashes, and requires a server-side session for employee APIs. Legacy browser records are migrated to the API when valid.
+The current HR MVP includes a searchable and filterable employee directory, employee creation and editing, active/inactive status changes, generated employee codes, duplicate-email validation, bilingual UI, and a SQLite-backed API. The home dashboard uses the authenticated user's identity and role, links dashboard cards to their ERP modules, and loads the employee profile matching the signed-in email through a session-protected self-profile endpoint. Users can reorder or hide dashboard sections; these preferences are stored per account in the current browser and are not yet synchronized to the server. Attendance, leave, salary, end-of-service, task, onboarding, request, and KPI values remain explicitly labeled sample data. The backend creates a first GM account through the initial setup screen, stores password hashes, and requires a server-side session for employee APIs. Legacy browser records are migrated to the API when valid.
 
 For local development, use Node.js 24 and run `npm run dev`. The application database is created at `data/biznova.sqlite` and is intentionally excluded from version control. Run `npm run test:api` for focused API tests and `npm run build` for the frontend production build. The current server binds to loopback for local development; production deployment still needs managed hosting, HTTPS, account administration/recovery, and an operational backup policy.
 

@@ -1,0 +1,121 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7ff;
+  --bg-soft: #eef1ff;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-strong: #ffffff;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.72);
+  --border: rgba(99, 102, 241, 0.14);
+  --text: #14172b;
+  --text-soft: #6b7194;
+  --primary: #14b8a6;
+  --primary-soft: color-mix(in srgb, var(--primary) 12%, white);
+  --secondary: #f5b544;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --accent-finance: #14b8a6;
+  --accent-finance-soft: #e6fbf7;
+  --accent-hr: #f5b544;
+  --accent-hr-soft: #fff6df;
+  --accent-sales: #22c55e;
+  --accent-marketing: #ec4899;
+  --accent-projects: #3b82f6;
+  --accent-purchases: #f97316;
+  --accent-inventory: #8b5cf6;
+  --accent-manufacturing: #0ea5e9;
+  --accent-slate: #64748b;
+  --font-ar: 'IBM Plex Sans Arabic', sans-serif;
+  --font-en: Inter, sans-serif;
+  --font-size-base: 15px;
+  --radius-card: 24px;
+  --radius-control: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(20, 23, 43, 0.04), 0 12px 32px -12px rgba(91, 91, 240, 0.18);
+  --shadow-hover: 0 5px 14px rgba(20, 23, 43, 0.08), 0 20px 36px -18px rgba(20, 184, 166, 0.25);
+  --space-page: 28px;
+  --transition-ui: 180ms ease;
+  --focus-ring: color-mix(in srgb, var(--primary) 52%, white);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0e1020;
+  --bg-soft: #14172a;
+  --panel: rgba(23, 26, 46, 0.88);
+  --panel-strong: #171a2e;
+  --surface: #171a2e;
+  --surface-glass: rgba(23, 26, 46, 0.78);
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #f2f4ff;
+  --text-soft: #a3a9cc;
+  --primary: #2dd4bf;
+  --primary-soft: color-mix(in srgb, var(--primary) 18%, #171a2e);
+  --secondary: #fbbf55;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  --accent-finance: #2dd4bf;
+  --accent-finance-soft: #14332f;
+  --accent-hr: #fbbf55;
+  --accent-hr-soft: #3b3020;
+  --accent-sales: #4ade80;
+  --accent-marketing: #f472b6;
+  --accent-projects: #60a5fa;
+  --accent-purchases: #fb923c;
+  --accent-inventory: #a78bfa;
+  --accent-manufacturing: #38bdf8;
+  --accent-slate: #94a3b8;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 16px 38px -18px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 8px 26px rgba(0, 0, 0, 0.35), 0 18px 34px -18px rgba(45, 212, 191, 0.25);
+  --focus-ring: color-mix(in srgb, var(--primary) 64%, white);
+}
+
+html,
+body,
+#root {
+  background:
+    radial-gradient(ellipse at 2% 0%, #e9e7ff 0, transparent 34%),
+    radial-gradient(ellipse at 100% 100%, #ddf4ff 0, transparent 32%),
+    var(--bg);
+  color: var(--text);
+  font-size: var(--font-size-base);
+}
+
+html[data-theme='dark'],
+html[data-theme='dark'] body,
+html[data-theme='dark'] #root {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(84, 72, 173, 0.18), transparent 34%),
+    radial-gradient(ellipse at 100% 100%, rgba(20, 184, 166, 0.1), transparent 34%),
+    var(--bg);
+}
+
+html[dir='rtl'] body,
+[dir='rtl'] {
+  font-family: var(--font-ar);
+}
+
+html[dir='ltr'] body,
+[dir='ltr'] {
+  font-family: var(--font-en);
+}
+
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

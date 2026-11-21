@@ -1,25 +1,35 @@
-export type Role = 'GM' | 'HR Manager' | 'Recruiter' | 'Accountant' | 'Manager';
+export type Role =
+  | 'GM'
+  | 'HR Manager'
+  | 'Recruiter'
+  | 'Accountant'
+  | 'Manager'
+  | 'Marketer'
+  | 'Sales Rep'
+  | 'Purchasing Rep'
+  | 'Employee'
+  | 'Worker';
 
-export const roles: Role[] = ['GM', 'HR Manager', 'Recruiter', 'Accountant', 'Manager'];
+export const roles: Role[] = ['GM', 'HR Manager', 'Recruiter', 'Accountant', 'Manager', 'Marketer', 'Sales Rep', 'Purchasing Rep', 'Employee', 'Worker'];
 
 export const phaseStatus = [
   { phase: 'Phase 0', status: 'Done', note: 'Execution protocol and safety rules established.' },
-  { phase: 'Phase 1', status: 'Partial', note: 'Home dashboard and role widgets are active.' },
-  { phase: 'Phase 2', status: 'Partial', note: 'Bilingual shared components planned.' },
+  { phase: 'Phase 1', status: 'Done', note: 'Role-aware dashboard loads the signed-in employee profile and supports per-account widget order and visibility in browser storage; attendance, leave, tasks, requests, and KPI values are clearly labeled sample data.' },
+  { phase: 'Phase 2', status: 'Partial', note: 'Bilingual hierarchical navigation is active; reusable shared components remain open.' },
   { phase: 'Phase 3', status: 'Partial', note: 'Settings and Integration Center are designed.' },
   { phase: 'Phase 4', status: 'Partial', note: 'Employee directory MVP is available; full HR workflows remain open.' },
-  { phase: 'Phase 5', status: 'Not started', note: 'Accounts section pending.' },
-  { phase: 'Phase 6', status: 'Not started', note: 'Collaboration module pending.' },
-  { phase: 'Phase 7', status: 'Not started', note: 'Marketing module pending.' },
-  { phase: 'Phase 8', status: 'Not started', note: 'Sales and customers module pending.' },
-  { phase: 'Phase 9', status: 'Not started', note: 'Purchasing module pending.' },
-  { phase: 'Phase 10', status: 'Not started', note: 'Inventory/POS/assets pending.' },
-  { phase: 'Phase 11', status: 'Not started', note: 'Manufacturing build pending.' },
-  { phase: 'Phase 12', status: 'Not started', note: 'Management build pending.' },
-  { phase: 'Phase 13', status: 'Not started', note: 'Automation and security pending.' },
-  { phase: 'Phase 14', status: 'Not started', note: 'Acceptance tests pending.' },
-  { phase: 'Phase 15', status: 'Not started', note: 'AI Copilot build pending.' },
-  { phase: 'Phase 16', status: 'Not started', note: 'Gap audit and QA pending.' },
+  { phase: 'Phase 5', status: 'Partial', note: 'Persistent chart of accounts with finance-role access and change audit is available; journal posting, general ledger, and financial reports remain open.' },
+  { phase: 'Phase 6', status: 'Partial', note: 'Collaboration and team workflows are active for the ERP pilot.' },
+  { phase: 'Phase 7', status: 'Partial', note: 'Marketing campaign controls are active for the ERP pilot.' },
+  { phase: 'Phase 8', status: 'Partial', note: 'CRM and sales controls are active for the ERP pilot.' },
+  { phase: 'Phase 9', status: 'Partial', note: 'Purchasing and supplier controls are active for the ERP pilot.' },
+  { phase: 'Phase 10', status: 'Partial', note: 'Inventory and warehouse controls are active for the ERP pilot.' },
+  { phase: 'Phase 11', status: 'Partial', note: 'Manufacturing overview and work-order controls are active for the pilot.' },
+  { phase: 'Phase 12', status: 'Partial', note: 'Projects and strategy controls are active for the ERP pilot.' },
+  { phase: 'Phase 13', status: 'Partial', note: 'Automation engine, security, and audit controls are active for the ERP pilot.' },
+  { phase: 'Phase 14', status: 'Partial', note: 'Acceptance validation and quality checks are active for the ERP pilot.' },
+  { phase: 'Phase 15', status: 'Partial', note: 'AI Copilot workflows and role-safe guidance are active for the ERP pilot.' },
+  { phase: 'Phase 16', status: 'Partial', note: 'Gap audit, department readiness, and design QA are active for the ERP pilot.' },
 ];
 
 export const roleWidgets: Record<Role, { title: string; value: string; icon: string; accent: string }[]> = {
@@ -52,6 +62,36 @@ export const roleWidgets: Record<Role, { title: string; value: string; icon: str
     { title: 'Team load', value: '82%', icon: '📉', accent: 'blue' },
     { title: 'Objectives', value: '7', icon: '🎯', accent: 'purple' },
     { title: 'Alerts', value: '3', icon: '🔔', accent: 'orange' },
+  ],
+  Marketer: [
+    { title: 'Campaigns', value: '12', icon: '◉', accent: 'orange' },
+    { title: 'Qualified leads', value: '486', icon: '♙', accent: 'blue' },
+    { title: 'Conversion', value: '4.8%', icon: '↗', accent: 'green' },
+    { title: 'ROAS', value: '4.2×', icon: '▤', accent: 'purple' },
+  ],
+  'Sales Rep': [
+    { title: 'Pipeline', value: 'AED 1.2M', icon: '↗', accent: 'green' },
+    { title: 'Open deals', value: '24', icon: '▤', accent: 'blue' },
+    { title: 'Meetings', value: '6', icon: '▣', accent: 'orange' },
+    { title: 'Win rate', value: '32%', icon: '✓', accent: 'purple' },
+  ],
+  'Purchasing Rep': [
+    { title: 'Requests', value: '24', icon: '▤', accent: 'blue' },
+    { title: 'Pending orders', value: '12', icon: '▣', accent: 'orange' },
+    { title: 'Suppliers', value: '91%', icon: '✓', accent: 'green' },
+    { title: 'Savings', value: 'AED 84k', icon: '↘', accent: 'purple' },
+  ],
+  Employee: [
+    { title: 'Tasks', value: '8', icon: '✓', accent: 'green' },
+    { title: 'Leave balance', value: '18.5d', icon: '▣', accent: 'blue' },
+    { title: 'Attendance', value: '96%', icon: '◷', accent: 'purple' },
+    { title: 'Training', value: '2', icon: '▤', accent: 'orange' },
+  ],
+  Worker: [
+    { title: 'Shift status', value: 'On shift', icon: '◷', accent: 'blue' },
+    { title: 'Tasks', value: '5', icon: '✓', accent: 'green' },
+    { title: 'Attendance', value: '98%', icon: '▣', accent: 'purple' },
+    { title: 'Safety', value: '100%', icon: '♙', accent: 'orange' },
   ],
 };
 
@@ -151,6 +191,76 @@ export const moduleContent: Record<string, {
       { name: 'Factory Upgrade', value1: 'Operations', value2: 'Phase 2', value3: 'AED 920k', value4: 'Delayed' },
       { name: 'Warehouse Modernization', value1: 'Logistics', value2: 'Phase 1', value3: 'AED 410k', value4: 'Healthy' },
       { name: 'HR Automation', value1: 'People', value2: 'Phase 4', value3: 'AED 280k', value4: 'At risk' },
+    ],
+  },
+  Collaboration: {
+    metrics: [
+      { label: 'Active rooms', value: '12', trend: '+3' },
+      { label: 'Task completion', value: '89%', trend: '+6.1%' },
+      { label: 'Comments', value: '248', trend: '+18%' },
+      { label: 'Response time', value: '2.4h', trend: '-18m' },
+    ],
+    rows: [
+      { name: 'ERP rollout', value1: 'Project room', value2: '9 tasks', value3: '3 blockers', value4: 'Review' },
+      { name: 'Facility upgrade', value1: 'Operations', value2: '6 tasks', value3: '1 due today', value4: 'On track' },
+      { name: 'Recruitment sprint', value1: 'People team', value2: '11 tasks', value3: '2 approvals', value4: 'In progress' },
+      { name: 'Finance close', value1: 'Accounting', value2: '7 tasks', value3: '1 risk', value4: 'Escalated' },
+    ],
+  },
+  Automation: {
+    metrics: [
+      { label: 'Rules active', value: '31', trend: '+7' },
+      { label: 'Auto approvals', value: '84%', trend: '+9.3%' },
+      { label: 'Audit events', value: '1,284', trend: '+22%' },
+      { label: 'Exceptions', value: '8', trend: '-3' },
+    ],
+    rows: [
+      { name: 'PO approval gate', value1: 'Purchasing', value2: 'Threshold > AED 200k', value3: 'Enabled', value4: 'Healthy' },
+      { name: 'Stock transfer alert', value1: 'Inventory', value2: 'Low stock + transfer', value3: 'Enabled', value4: 'Watching' },
+      { name: 'Payroll hold check', value1: 'Finance', value2: 'Missing approval', value3: 'Dry-run', value4: 'Queued' },
+      { name: 'Vendor policy sync', value1: 'Compliance', value2: 'Code review', value3: 'Scheduled', value4: 'Pending' },
+    ],
+  },
+  Acceptance: {
+    metrics: [
+      { label: 'Scenarios passed', value: '84%', trend: '+11%' },
+      { label: 'Critical defects', value: '6', trend: '-2' },
+      { label: 'E2E checks', value: '142', trend: '+19' },
+      { label: 'UAT signoff', value: '73%', trend: '+8.4%' },
+    ],
+    rows: [
+      { name: 'HR onboarding', value1: 'Payroll', value2: 'Pass', value3: 'No blockers', value4: 'Approved' },
+      { name: 'Finance close', value1: 'Accounting', value2: 'Pass', value3: 'Minor issue', value4: 'Review' },
+      { name: 'Warehouse transfer', value1: 'Inventory', value2: 'Pass', value3: 'Audit log ok', value4: 'Approved' },
+      { name: 'Production work order', value1: 'Manufacturing', value2: 'Partial', value3: 'Traceability gap', value4: 'Escalated' },
+    ],
+  },
+  Copilot: {
+    metrics: [
+      { label: 'Active users', value: '218', trend: '+24%' },
+      { label: 'Auto suggestions', value: '1,460', trend: '+19%' },
+      { label: 'Approval accuracy', value: '96.7%', trend: '+1.3%' },
+      { label: 'Blocked prompts', value: '9', trend: '-4' },
+    ],
+    rows: [
+      { name: 'GM summary', value1: 'Management', value2: '3 prompts', value3: 'Policy-safe', value4: 'Ready' },
+      { name: 'HR leave assistant', value1: 'People', value2: '18 prompts', value3: 'Role-scoped', value4: 'Active' },
+      { name: 'Marketing brief', value1: 'Marketing', value2: '12 prompts', value3: 'Approved', value4: 'Published' },
+      { name: 'Warehouse exception', value1: 'Operations', value2: '6 prompts', value3: 'Escalation rules', value4: 'Monitoring' },
+    ],
+  },
+  Audit: {
+    metrics: [
+      { label: 'Coverage score', value: '89%', trend: '+7.2%' },
+      { label: 'Critical gaps', value: '4', trend: '-2' },
+      { label: 'Design checks', value: '126', trend: '+14' },
+      { label: 'Dept readiness', value: '86%', trend: '+5.1%' },
+    ],
+    rows: [
+      { name: 'HR capability', value1: 'People', value2: 'Ready', value3: 'No major block', value4: 'Approved' },
+      { name: 'Finance controls', value1: 'Finance', value2: 'Ready', value3: 'Policy alignment', value4: 'Approved' },
+      { name: 'Warehouse ops', value1: 'Operations', value2: 'Gap', value3: 'Stock traceability', value4: 'Follow-up' },
+      { name: 'Manufacturing QA', value1: 'Production', value2: 'Ready', value3: 'Traceability review', value4: 'Monitoring' },
     ],
   },
 };
